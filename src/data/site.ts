@@ -177,7 +177,7 @@ export const achievements = [
     period: "2023 and 2024",
     category: "Competitive programming",
     details:
-      "Placed in the global top 100 in IEEEXtreme 17.0, 18.0, and 19.0, becoming part of the first team from Sri Lanka to sustain that achievement across three consecutive years.",
+      "Placed in the global top 100 in IEEEXtreme 17.0, and 18.0, becoming part of the first team from Sri Lanka to sustain that achievement across three consecutive years.",
   },
   {
     title: "IEEEXtreme 18.0",

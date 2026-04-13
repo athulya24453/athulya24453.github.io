@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { achievements } from "../data/site";
+---
+
+<Layout
+  title="Achievements | Athulya Ratnayake"
+  description="Awards, recognitions, and competitive achievements from Athulya Ratnayake's CV."
+  currentPath="/achievements"
+>
+  <div class="page-stack">
+    <section class="hero-card">
+      <div class="hero-copy">
+        <span class="eyebrow">Recognition</span>
+        <h1>Achievements</h1>
+        <div class="pill-row">
+          <span class="pill">Research awards</span>
+          <span class="pill">Competitive programming</span>
+          <span class="pill">Academic distinction</span>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <span class="eyebrow">Highlights</span>
+        <h3>What stands out</h3>
+        <div class="detail-stack">
+          <div class="detail-card">
+            <strong>Research impact</strong>
+            <small>Recognized at both national and departmental level for final-year research work.</small>
+          </div>
+          <div class="detail-card">
+            <strong>Consistent performance</strong>
+            <small>Strong results across programming contests, hackathons, and academic milestones.</small>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="content-card">
+      <div class="section-heading">
+        <span class="eyebrow">Timeline</span>
+        <h2>Awards and recognitions</h2>
+      </div>
+
+      <div class="projects-grid">
+        {
+          achievements.map((achievement) => (
+            <article class="timeline-card">
+              <div class="meta-row">
+                <span class="timeline-card__date">{achievement.period}</span>
+                <span class="meta-chip">{achievement.category}</span>
+              </div>
+              <strong>{achievement.title}</strong>
+              <p>{achievement.details}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,16 @@
+<svg width="640" height="800" viewBox="0 0 640 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="800" rx="48" fill="url(#paint0_linear)" />
+  <circle cx="508" cy="132" r="112" fill="white" fill-opacity="0.12" />
+  <circle cx="138" cy="682" r="168" fill="white" fill-opacity="0.08" />
+  <path d="M320 278C374.124 278 418 234.124 418 180C418 125.876 374.124 82 320 82C265.876 82 222 125.876 222 180C222 234.124 265.876 278 320 278Z" fill="white" fill-opacity="0.18"/>
+  <path d="M176 560C176 459.484 257.484 378 358 378H282C181.484 378 100 459.484 100 560V640C100 661.046 117.954 678 139 678H497C518.046 678 536 661.046 536 640V560C536 459.484 454.516 378 354 378H358C458.516 378 540 459.484 540 560V618C540 651.137 513.137 678 480 678H160C126.863 678 100 651.137 100 618V560C100 459.484 181.484 378 282 378H358C257.484 378 176 459.484 176 560Z" fill="white" fill-opacity="0.18"/>
+  <text x="72" y="724" fill="white" fill-opacity="0.96" font-family="Georgia, 'Times New Roman', serif" font-size="96" font-weight="700">AR</text>
+  <text x="76" y="768" fill="white" fill-opacity="0.72" font-family="'Segoe UI', sans-serif" font-size="28">Portrait placeholder</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="64" y1="40" x2="612" y2="758" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5734" />
+      <stop offset="0.5" stop-color="#4F6D7A" />
+      <stop offset="1" stop-color="#1D2A34" />
+    </linearGradient>
+  </defs>
+</svg>

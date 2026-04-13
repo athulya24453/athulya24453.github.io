@@ -1,0 +1,105 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { article } from "../data/site";
+---
+
+<Layout
+  title="Articles | Athulya Ratnayake"
+  description="Articles and reflective writing by Athulya Ratnayake."
+  currentPath="/articles"
+>
+  <div class="page-stack">
+    <section class="hero-card">
+      <div class="hero-copy">
+        <span class="eyebrow">Writing</span>
+        <h1>Articles</h1>
+        <p class="lede">
+          A reading space for long-form technical and reflective writing.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Thought pieces</span>
+          <span class="pill">Engineering reflection</span>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <span class="eyebrow">Current Entry</span>
+        <h3>{article.title}</h3>
+        <p>{article.preview}</p>
+      </aside>
+    </section>
+
+    <section class="content-card">
+      <div class="section-heading">
+        <span class="eyebrow">Library</span>
+        <h2>Article list</h2>
+        <p>
+          The current article was added from the provided PDF and reformatted into a clean reading experience
+          without embedded imagery.
+        </p>
+      </div>
+
+      <div class="articles-grid">
+        <article class="article-card">
+          <div class="meta-row">
+            <span class="meta-chip">Essay</span>
+          </div>
+          <strong>{article.title}</strong>
+          <p>{article.preview}</p>
+          <div class="article-card__footer">
+            <button class="button-link" type="button" data-open-article="article-main">
+              Read more
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <dialog class="article-dialog" data-article-dialog="article-main">
+    <div class="article-dialog__inner">
+      <div class="article-dialog__header">
+        <div class="detail-stack">
+          <span class="eyebrow">Full article</span>
+          <h2>{article.title}</h2>
+        </div>
+        <button class="button-ghost" type="button" data-close-article>
+          Close
+        </button>
+      </div>
+
+      <div class="article-dialog__content">
+        {article.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        <blockquote>{article.closingQuestion}</blockquote>
+      </div>
+    </div>
+  </dialog>
+
+  <script is:inline>
+    const openButtons = document.querySelectorAll("[data-open-article]");
+    openButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const target = button.getAttribute("data-open-article");
+        document.querySelector(`[data-article-dialog="${target}"]`)?.showModal();
+      });
+    });
+
+    document.querySelectorAll("[data-close-article]").forEach((button) => {
+      button.addEventListener("click", () => {
+        button.closest("dialog")?.close();
+      });
+    });
+
+    document.querySelectorAll("[data-article-dialog]").forEach((dialog) => {
+      dialog.addEventListener("click", (event) => {
+        const bounds = dialog.getBoundingClientRect();
+        const inside =
+          event.clientX >= bounds.left &&
+          event.clientX <= bounds.right &&
+          event.clientY >= bounds.top &&
+          event.clientY <= bounds.bottom;
+        if (!inside) dialog.close();
+      });
+    });
+  </script>
+</Layout>

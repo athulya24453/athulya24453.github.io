@@ -1,0 +1,83 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { profile } from "../data/site";
+
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+---
+
+<Layout
+  title="Profile | Athulya Ratnayake"
+  description="Profile page with biography, social links, contact details, and research focus."
+  currentPath="/"
+>
+  <div class="page-stack">
+    <section class="hero-card">
+      <div class="hero-copy">
+        <span class="eyebrow">Profile</span>
+        
+        <p class="lede">{profile.biography}</p>
+
+        <div class="pill-row">
+          {profile.researchFocus.map((item) => <span class="pill">{item}</span>)}
+        </div>
+
+        <div class="cta-row">
+          <a class="button-link" href={withBase("/publications")}>Explore publications</a>
+          <a
+            class="button-ghost"
+            href={withBase("/AthulyaRatnayake_CV.pdf")}
+            target="_blank"
+            rel="noreferrer"
+          >
+            View CV
+          </a>
+          <a class="button-ghost" href="mailto:ratnayakeathulya@gmail.com">Get in touch</a>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <div class="portrait">
+          <img src={withBase("/me.jpeg")} alt="Portrait of Athulya Ratnayake" />
+        </div>
+
+        <div class="detail-stack">
+          <div class="detail-card">
+            <strong>{profile.name}</strong>
+            <small>{profile.role}</small>
+          </div>
+          <div class="detail-card">
+            <strong>Based in</strong>
+            <small>{profile.location}</small>
+          </div>
+          <div class="detail-card">
+            <strong>Email</strong>
+            <small>{profile.email}</small>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="content-card">
+      <div class="section-heading">
+        <span class="eyebrow">Connect</span>
+        <h2>Social links and academic presence</h2>
+      </div>
+
+      <div class="social-grid">
+        {
+          profile.socials.map((social) =>
+            social.url ? (
+              <a class="social-link" href={social.url} target="_blank" rel="noreferrer">
+                <span>{social.label}</span>
+              </a>
+            ) : (
+              <div class="social-link social-link--disabled">
+                <span>{social.label}</span>
+              </div>
+            ),
+          )
+        }
+      </div>
+    </section>
+  </div>
+</Layout>

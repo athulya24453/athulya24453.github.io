@@ -1,0 +1,104 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { publications } from "../data/site";
+
+const highlightedName = "Athulya Ratnayake";
+const secondReviewPattern = /^Under(?: the)? second review(?: round)? at\s+/i;
+
+const splitAuthors = (authors: string) => authors.split(highlightedName);
+const getVenueLabel = (status: string, venue: string) => {
+  if (secondReviewPattern.test(venue)) {
+    return "In second review round at";
+  }
+
+  if (status === "Conference paper") {
+    return "In Proceedings of";
+  }
+
+  return status === "Under review" ? "Under review in" : "Published in";
+};
+
+const getVenueText = (status: string, venue: string) => {
+  if (status === "Under review") {
+    return venue
+      .replace(/^Under review in\s+/i, "")
+      .replace(secondReviewPattern, "");
+  }
+
+  return venue;
+};
+---
+
+<Layout
+  title="Publications | Athulya Ratnayake"
+  description="Research publications, conference papers, and works under review."
+  currentPath="/publications"
+>
+  <div class="page-stack">
+    <section class="hero-card">
+      <div class="hero-copy">
+        <span class="eyebrow">Research Output</span>
+        <h1>Publications</h1>
+        <p class="lede">
+          A curated record of journal papers, conference publications, and ongoing scholarly work across
+          remote sensing, demographic modelling, and AI-driven signal analysis.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Journal papers</span>
+          <span class="pill">Conference proceedings</span>
+          <span class="pill">Under-review work</span>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <span class="eyebrow">At a Glance</span>
+        <h3>Publication profile</h3>
+        <div class="detail-stack">
+          <div class="detail-card">
+            <strong>Focus areas</strong>
+            <small>Remote sensing, hyperspectral imaging, demographic analytics, and semantic change detection.</small>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="content-card">
+      <div class="section-heading">
+        <span class="eyebrow">List</span>
+        <h2>Research publications and scholarly work</h2>
+      </div>
+
+      <div class="publication-grid">
+        {
+          publications.map((item) => (
+            <article class="list-card publication-card">
+              <div class="meta-row">
+                <span class="meta-chip">{item.status}</span>
+              </div>
+              <div class="detail-stack">
+                <h3>{item.title}</h3>
+                <p>
+                  {splitAuthors(item.authors).map((part, index, parts) => (
+                    <>
+                      {part}
+                      {index < parts.length - 1 && <u>{highlightedName}</u>}
+                    </>
+                  ))}
+                </p>
+                <div class="detail-card">
+                  <strong>{getVenueLabel(item.status, item.venue)}</strong>
+                  <small>{getVenueText(item.status, item.venue)}</small>
+                </div>
+              </div>
+              <div class="publication-card__footer">
+                <a class="button-ghost" href={item.doi} target="_blank" rel="noreferrer">
+                  View Article
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</Layout>

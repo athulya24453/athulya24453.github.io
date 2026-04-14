@@ -36,7 +36,7 @@ export const profile = {
   metrics: [
     { label: "Publications", value: "6", note: "Journals, conference papers, and works under review" },
     { label: "Projects", value: "5", note: "Research and applied AI projects highlighted from the CV" },
-    { label: "Articles", value: "1", note: "Long-form reflective engineering writing with full-screen reader" },
+    { label: "Articles", value: "2", note: "Long-form reflective engineering writing with full-screen reader" },
     { label: "Recognition", value: "Top 100", note: "Global IEEEXtreme placement in three consecutive years" },
   ],
 };
@@ -235,22 +235,41 @@ export const achievements = [
   },
 ];
 
-export const article = {
-  title: "When Systems Observe Themselves: Reflections on a Mathematical Paradox and Its Lessons for Engineering",
-  author: "Athulya Ratnayake",
-  affiliation: "DEEE, University of Peradeniya",
-  preview:
-    "A reflective article connecting Russell's paradox with self-reference, feedback, and stability in engineering systems.",
-  paragraphs: [
-    "It is often assumed that most problems can be solved by observing the external environment. We measure, we analyse, and we act, correcting errors as they occur. Difficulties arise not necessarily from the complexity of the problem but from a failure to notice important factors beyond our immediate perception. There exists, however, a particular class of problems that occurs when a system begins to turn its attention inward. When a system evaluates its own actions and responds to them, the results can be unexpected.",
-    "Self-reference may be helpful, allowing learning and correction. Yet history shows that it can also cause instability and, in extreme cases, a breakdown of logical consistency. Mathematics identified this phenomenon long before it was widely considered in engineering practice.",
-    "In 1901, Bertrand Russell described what is now known as Russell's paradox. He asked whether it is possible to consider the set of all sets that do not contain themselves. At first glance, this question seems simple. Yet it leads to a contradiction. If such a set exists, it both contains itself and does not contain itself. This logical conflict demonstrates that even fundamental principles may fail when they are applied to themselves.",
-    "This paradox has relevance beyond mathematics. In electrical and electronic engineering, similar situations occur in systems that use feedback. In a control loop, the output of a system is returned to its input, creating a form of self-reference. This principle is widely applied in vehicle cruise control, audio amplifiers, and robotic motion control. Feedback is essential because it allows systems to adjust to changing conditions and maintain stability.",
-    "However, self-reference can also introduce risk. Positive feedback can change stability into oscillation. Excessive reliance on the system's own outputs can amplify small errors and produce unpredictable behaviour. In such cases, the system may no longer behave as expected. What was designed to stabilise can instead worsen the problem. Engineers must therefore limit feedback carefully to prevent such outcomes.",
-    "It is important to note that these limitations do not arise from hardware flaws or environmental noise. Even with perfect knowledge of a system, self-reference can produce effects that are inherently uncertain. The paradox is embedded in the structure of the system itself. Russell's paradox teaches a clear lesson: logic may fail not because it is weak but because it is applied to itself without limitation.",
-    "Engineering systems face the same challenge. Feedback allows control but can also produce instability. Self-correction may maintain equilibrium, but uncontrolled self-reference can cause systems to behave unpredictably. In both fields, the most powerful tools carry the greatest risks when not properly managed.",
-    "We often trust models and equations because they appear precise and reliable. Yet even perfectly logical rules may give rise to unexpected results when a system observes and reacts to its own behaviour.",
-  ],
-  closingQuestion:
-    "When a system is capable of observing itself and responding to its own actions, how can we ensure that it will regulate its behaviour rather than undermine its own logical coherence?",
-};
+export const articles = [
+  {
+    id: "article-pascal-triangle",
+    title: "Pascal's Triangle, Part I: The Visible Architecture of the Triangle",
+    preview:
+      "An exploration of Pascal's triangle as a visible mathematical structure, covering boundary entries, row symmetry, and the figurate-number sequences hidden in its diagonals.",
+    paragraphs: [
+      "Pascal's triangle is one of the most familiar objects in elementary mathematics, yet it contains a surprising wealth of structure. Before turning to its algebraic role in binomial expansion, it is worthwhile to study the triangle simply as a pattern of numbers built from a very simple rule. In this article, I examine its visible architecture: the boundary entries, the symmetry of each row, and the remarkable sequences that arise along its shallow diagonals.",
+      "The triangle is built according to a simple rule: the first and last entry in each row are 1, and every interior entry is obtained by adding the two entries directly above it. Although the rule is simple, several striking patterns already appear at this stage, and the purpose of the article is to establish the first of them.",
+      "The first visible fact is that every row begins and ends with 1. This may look too simple to deserve attention, yet it plays an important role: the boundary of the triangle acts as a fixed frame from which all interior entries are generated.",
+      "A second pattern is immediately apparent: each row reads the same from left to right as from right to left. This symmetry is not accidental. It follows directly from the recursive construction rule, and it means that the left half of the triangle already determines the right half.",
+      "Moving from rows to diagonals reveals a new family of patterns. The second shallow diagonal gives the counting numbers 1, 2, 3, 4, and so on. The next shallow diagonal gives the triangular numbers 1, 3, 6, 10, 15, and these arise naturally from repeated addition rather than by external insertion.",
+      "The pattern continues into higher diagonals. After the triangular numbers come the tetrahedral numbers, then the pentatope numbers, and more generally the simplex numbers. Each shallow diagonal is obtained by summing the previous one term by term, which shows that Pascal's triangle contains, in a systematic way, repeated sums of repeated sums of 1.",
+      "This is one of the most appealing features of the triangle: visible patterns that are easy to observe but are not accidental. They emerge directly from the construction of the triangle itself.",
+      "Even before one studies its algebraic significance, Pascal's triangle reveals a remarkable internal order. Its boundary remains fixed at 1, each row is symmetric, and its shallow diagonals generate whole families of figurate numbers. In the next article, I move from visible structure to algebraic meaning and show that the rows of Pascal's triangle are precisely the coefficients that appear in the expansion of (1 + x)^n.",
+    ],
+    closingHighlight:
+      "The visible architecture of Pascal's triangle is not a coincidence; it is the natural consequence of a simple recursive rule unfolding into deep numerical structure.",
+  },
+  {
+    id: "article-systems-observe-themselves",
+    title: "When Systems Observe Themselves: Reflections on a Mathematical Paradox and Its Lessons for Engineering",
+    preview:
+      "A reflective article connecting Russell's paradox with self-reference, feedback, and stability in engineering systems.",
+    paragraphs: [
+      "It is often assumed that most problems can be solved by observing the external environment. We measure, we analyse, and we act, correcting errors as they occur. Difficulties arise not necessarily from the complexity of the problem but from a failure to notice important factors beyond our immediate perception. There exists, however, a particular class of problems that occurs when a system begins to turn its attention inward. When a system evaluates its own actions and responds to them, the results can be unexpected.",
+      "Self-reference may be helpful, allowing learning and correction. Yet history shows that it can also cause instability and, in extreme cases, a breakdown of logical consistency. Mathematics identified this phenomenon long before it was widely considered in engineering practice.",
+      "In 1901, Bertrand Russell described what is now known as Russell's paradox. He asked whether it is possible to consider the set of all sets that do not contain themselves. At first glance, this question seems simple. Yet it leads to a contradiction. If such a set exists, it both contains itself and does not contain itself. This logical conflict demonstrates that even fundamental principles may fail when they are applied to themselves.",
+      "This paradox has relevance beyond mathematics. In electrical and electronic engineering, similar situations occur in systems that use feedback. In a control loop, the output of a system is returned to its input, creating a form of self-reference. This principle is widely applied in vehicle cruise control, audio amplifiers, and robotic motion control. Feedback is essential because it allows systems to adjust to changing conditions and maintain stability.",
+      "However, self-reference can also introduce risk. Positive feedback can change stability into oscillation. Excessive reliance on the system's own outputs can amplify small errors and produce unpredictable behaviour. In such cases, the system may no longer behave as expected. What was designed to stabilise can instead worsen the problem. Engineers must therefore limit feedback carefully to prevent such outcomes.",
+      "It is important to note that these limitations do not arise from hardware flaws or environmental noise. Even with perfect knowledge of a system, self-reference can produce effects that are inherently uncertain. The paradox is embedded in the structure of the system itself. Russell's paradox teaches a clear lesson: logic may fail not because it is weak but because it is applied to itself without limitation.",
+      "Engineering systems face the same challenge. Feedback allows control but can also produce instability. Self-correction may maintain equilibrium, but uncontrolled self-reference can cause systems to behave unpredictably. In both fields, the most powerful tools carry the greatest risks when not properly managed.",
+      "We often trust models and equations because they appear precise and reliable. Yet even perfectly logical rules may give rise to unexpected results when a system observes and reacts to its own behaviour.",
+    ],
+    closingHighlight:
+      "When a system is capable of observing itself and responding to its own actions, how can we ensure that it will regulate its behaviour rather than undermine its own logical coherence?",
+  },
+];

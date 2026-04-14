@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { article } from "../data/site";
+import { articles } from "../data/site";
+
+const featuredArticle = articles[0];
 ---
 
 <Layout
@@ -24,8 +26,8 @@ import { article } from "../data/site";
 
       <aside class="profile-card">
         <span class="eyebrow">Current Entry</span>
-        <h3>{article.title}</h3>
-        <p>{article.preview}</p>
+        <h3>{featuredArticle.title}</h3>
+        <p>{featuredArticle.preview}</p>
       </aside>
     </section>
 
@@ -34,46 +36,54 @@ import { article } from "../data/site";
         <span class="eyebrow">Library</span>
         <h2>Article list</h2>
         <p>
-          The current article was added from the provided PDF and reformatted into a clean reading experience
-          without embedded imagery.
+          Each article is listed as a separate entry and opens in a dedicated modal reader without embedded
+          imagery.
         </p>
       </div>
 
       <div class="articles-grid">
-        <article class="article-card">
-          <div class="meta-row">
-            <span class="meta-chip">Essay</span>
-          </div>
-          <strong>{article.title}</strong>
-          <p>{article.preview}</p>
-          <div class="article-card__footer">
-            <button class="button-link" type="button" data-open-article="article-main">
-              Read more
-            </button>
-          </div>
-        </article>
+        {
+          articles.map((article) => (
+            <article class="article-card">
+              <div class="meta-row">
+                <span class="meta-chip">Essay</span>
+              </div>
+              <strong>{article.title}</strong>
+              <p>{article.preview}</p>
+              <div class="article-card__footer">
+                <button class="button-link" type="button" data-open-article={article.id}>
+                  Read more
+                </button>
+              </div>
+            </article>
+          ))
+        }
       </div>
     </section>
   </div>
 
-  <dialog class="article-dialog" data-article-dialog="article-main">
-    <div class="article-dialog__inner">
-      <div class="article-dialog__header">
-        <div class="detail-stack">
-          <span class="eyebrow">Full article</span>
-          <h2>{article.title}</h2>
-        </div>
-        <button class="button-ghost" type="button" data-close-article>
-          Close
-        </button>
-      </div>
+  {
+    articles.map((article) => (
+      <dialog class="article-dialog" data-article-dialog={article.id}>
+        <div class="article-dialog__inner">
+          <div class="article-dialog__header">
+            <div class="detail-stack">
+              <span class="eyebrow">Full article</span>
+              <h2>{article.title}</h2>
+            </div>
+            <button class="button-ghost" type="button" data-close-article>
+              Close
+            </button>
+          </div>
 
-      <div class="article-dialog__content">
-        {article.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-        <blockquote>{article.closingQuestion}</blockquote>
-      </div>
-    </div>
-  </dialog>
+          <div class="article-dialog__content">
+            {article.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            <blockquote>{article.closingHighlight}</blockquote>
+          </div>
+        </div>
+      </dialog>
+    ))
+  }
 
   <script is:inline>
     const openButtons = document.querySelectorAll("[data-open-article]");

@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { articles } from "../data/site";
 
 const featuredArticle = articles[0];
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 ---
 
 <Layout
@@ -51,9 +52,22 @@ const featuredArticle = articles[0];
               <strong>{article.title}</strong>
               <p>{article.preview}</p>
               <div class="article-card__footer">
-                <button class="button-link" type="button" data-open-article={article.id}>
-                  Read more
-                </button>
+                {
+                  article.pdfUrl ? (
+                    <a
+                      class="button-link"
+                      href={withBase(article.pdfUrl)}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Read more
+                    </a>
+                  ) : (
+                    <button class="button-link" type="button" data-open-article={article.id}>
+                      Read more
+                    </button>
+                  )
+                }
               </div>
             </article>
           ))

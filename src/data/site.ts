@@ -241,6 +241,7 @@ export const articles = [
     title: "Pascal's Triangle, Part I: The Visible Architecture of the Triangle",
     preview:
       "An exploration of Pascal's triangle as a visible mathematical structure, covering boundary entries, row symmetry, and the figurate-number sequences hidden in its diagonals.",
+    pdfUrl: "/PascalTriangle_1.pdf",
     paragraphs: [
       "Pascal's triangle is one of the most familiar objects in elementary mathematics, yet it contains a surprising wealth of structure. Before turning to its algebraic role in binomial expansion, it is worthwhile to study the triangle simply as a pattern of numbers built from a very simple rule. In this article, I examine its visible architecture: the boundary entries, the symmetry of each row, and the remarkable sequences that arise along its shallow diagonals.",
       "The triangle is built according to a simple rule: the first and last entry in each row are 1, and every interior entry is obtained by adding the two entries directly above it. Although the rule is simple, several striking patterns already appear at this stage, and the purpose of the article is to establish the first of them.",
@@ -259,6 +260,7 @@ export const articles = [
     title: "When Systems Observe Themselves: Reflections on a Mathematical Paradox and Its Lessons for Engineering",
     preview:
       "A reflective article connecting Russell's paradox with self-reference, feedback, and stability in engineering systems.",
+    pdfUrl: "",
     paragraphs: [
       "It is often assumed that most problems can be solved by observing the external environment. We measure, we analyse, and we act, correcting errors as they occur. Difficulties arise not necessarily from the complexity of the problem but from a failure to notice important factors beyond our immediate perception. There exists, however, a particular class of problems that occurs when a system begins to turn its attention inward. When a system evaluates its own actions and responds to them, the results can be unexpected.",
       "Self-reference may be helpful, allowing learning and correction. Yet history shows that it can also cause instability and, in extreme cases, a breakdown of logical consistency. Mathematics identified this phenomenon long before it was widely considered in engineering practice.",

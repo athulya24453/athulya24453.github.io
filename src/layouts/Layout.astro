@@ -39,7 +39,9 @@ const navigation = [
 
       <header class="site-header">
         <a class="brand" href={withBase("/")}>
-          <span class="brand-mark">AR</span>
+          <span class="brand-mark brand-mark--image">
+            <img src={withBase("/me.jpg")} alt="Athulya Ratnayake" />
+          </span>
           <span class="brand-copy">
             <strong>Athulya Ratnayake</strong>
             <small>Research Portfolio</small>
@@ -138,7 +140,8 @@ const navigation = [
   .site-header, .page-frame, .site-footer { position: relative; z-index: 1; width: var(--page-width); margin-inline: auto; }
   .site-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0 0.5rem; }
   .brand { display: inline-flex; align-items: center; gap: 0.9rem; }
-  .brand-mark { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 18px; border: 1px solid var(--line); background: var(--bg-elevated); box-shadow: var(--shadow); font-family: var(--heading-font); font-weight: 700; letter-spacing: 0.08em; }
+  .brand-mark { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 18px; border: 1px solid var(--line); background: var(--bg-elevated); box-shadow: var(--shadow); font-family: var(--heading-font); font-weight: 700; letter-spacing: 0.08em; overflow: hidden; }
+  .brand-mark--image img { width: 100%; height: 100%; object-fit: cover; }
   .brand-copy { display: grid; gap: 0.1rem; }
   .brand-copy strong { font-size: 0.98rem; }
   .brand-copy small { color: var(--muted); font-size: 0.82rem; }

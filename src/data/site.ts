@@ -61,6 +61,20 @@ export const publications = [
     status: "Under review",
   },
   {
+    title: "From Parallelism to Specialisation: SSA-Guided Multi-Branch Implicit Neural Representations",
+    authors:
+      "Athulya Ratnayake, Buwaneka Epakanda, Sajana Bogahawatta, Roshan Godaliyadda, Parakrama Ekanayake",
+    venue: "Under review in ICLR 2027",
+    status: "Under review",
+  },
+  {
+    title: "ScaLe-INR: Scale and Learn Implicit Neural Representations",
+    authors:
+      "Buwaneka Epakanda, Athulya Ratnayake, Pandula Thennakoon, Mario De Silva, Avishka Ranasinghe, Roshan Godaliyadda, Parakrama Ekanayake",
+    venue: "Under review in ICLR 2027",
+    status: "Under review",
+  },
+  {
     title: "Devising PoPStat: A Metric to Assess Mortality Dynamics within Demographic Transition",
     authors:
       "Tharaka Fonseka, Buddhi Wijenayake, Athulya Ratnayake, Inosha Alwis, Supun Sudaraka Manathunga, Roshan Godaliyadda, Samath Dharmarathne, Vijitha Herath, Parakrama Ekanayake, Isuru Thilakasiri",

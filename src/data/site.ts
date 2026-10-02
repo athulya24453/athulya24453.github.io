@@ -151,13 +151,13 @@ export const projects = [
     ],
   },
   {
-    title: "Implicit Neural Representation",
+    title: "Implicit Neural Representations: Coordinate Scaling and Branch Specialisation",
     period: "September 2025 - Present",
     category: "Theoretical research",
     highlights: [
-      "Studying implicit neural representations as continuous-function models for signals rather than discrete grids.",
-      "Derived the Neural Tangent Kernel for a complex-valued INR architecture.",
-      "Investigating efficient NTK computation using Jacobian-vector and vector-Jacobian products.",
+      "Developed CoRe-INR using axis-wise coordinate scaling and confidence-based fusion; analysed spectral support and convergence through frequency-domain and neural tangent kernel analysis.",
+      "Proposed SSA-guided branch specialisation with explicit component supervision, PSO-initialised learnable scaling, and gated additive fusion for image and audio representation.",
+      "Evaluated CoRe-INR on image, audio, and 3D representation, alongside denoising, super-resolution, and inpainting.",
     ],
   },
   {

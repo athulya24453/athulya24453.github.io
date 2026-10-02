@@ -29,9 +29,9 @@ export const profile = {
       url: "https://www.github.com/athulya24453",
     },
     {
-      label: "Facebook",
-      handle: "facebook.com/share/1AprsTdjzN",
-      url: "https://www.facebook.com/share/1AprsTdjzN/",
+      label: "YouTube",
+      handle: "youtube.com/@athulyaratnayake1081",
+      url: "https://www.youtube.com/@athulyaratnayake1081",
     },
   ],
   metrics: [

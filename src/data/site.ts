@@ -130,6 +130,16 @@ export const projects = [
       "Improved minority-class sensitivity with Dice Loss and loss functions tailored to changed-versus-unchanged separation.",
     ],
   },
+   {
+    title: "Implicit Neural Representations: Coordinate Scaling and Branch Specialisation",
+    period: "September 2025 - Present",
+    category: "Theoretical research",
+    highlights: [
+      "Developed CoRe-INR using axis-wise coordinate scaling and confidence-based fusion; analysed spectral support and convergence through frequency-domain and neural tangent kernel analysis.",
+      "Proposed SSA-guided branch specialisation with explicit component supervision, PSO-initialised learnable scaling, and gated additive fusion for image and audio representation.",
+      "Evaluated CoRe-INR on image, audio, and 3D representation, alongside denoising, super-resolution, and inpainting.",
+    ],
+  },
   {
     title: "HeritageAI: NVIDIA-Supported Heritage Image Restoration Using Diffusion and INRs",
     period: "October 2023 - Present",
@@ -148,16 +158,6 @@ export const projects = [
       "Developed PoPDivergence, a KL-divergence-based scalar to compare national population pyramids against an optimized reference.",
       "Introduced PoPStat to quantify demographic influence on disease-specific mortality across 371 global diseases.",
       "Benchmarked the method against HDI, GDP, median age, and life expectancy, showing stronger explanatory power for many diseases.",
-    ],
-  },
-  {
-    title: "Implicit Neural Representations: Coordinate Scaling and Branch Specialisation",
-    period: "September 2025 - Present",
-    category: "Theoretical research",
-    highlights: [
-      "Developed CoRe-INR using axis-wise coordinate scaling and confidence-based fusion; analysed spectral support and convergence through frequency-domain and neural tangent kernel analysis.",
-      "Proposed SSA-guided branch specialisation with explicit component supervision, PSO-initialised learnable scaling, and gated additive fusion for image and audio representation.",
-      "Evaluated CoRe-INR on image, audio, and 3D representation, alongside denoising, super-resolution, and inpainting.",
     ],
   },
   {

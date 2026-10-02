@@ -4,7 +4,7 @@ export const profile = {
   location: "Kandy, Sri Lanka",
   email: "ratnayakeathulya@gmail.com",
   biography:
-    "I work at the intersection of mathematics, signal processing, and machine learning, with a strong interest in probability, statistics, stochastic signal processing, and the mathematical foundations of machine learning. My recent work spans remote sensing, demographic analysis, and implicit neural representations.",
+    "I work at the intersection of mathematics, signal processing, and machine learning, with a current focus on implicit neural representations (INRs), their mathematical foundations, and their applications in signal and image modelling. I also maintain a strong interest in remote sensing, particularly in applying signal processing and machine learning to analyse remotely sensed data.",
   researchFocus: [
     "Mathematical foundations of machine learning",
     "Signal processing and remote sensing",
